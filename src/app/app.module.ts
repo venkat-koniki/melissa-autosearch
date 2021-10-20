@@ -10,9 +10,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { GoogleAutocompleteComponent } from './google-autocomplete/google-autocomplete.component';
+import { AgmCoreModule } from '@agm/core';
+import {MatGoogleMapsAutocompleteModule} from '@angular-material-extensions/google-maps-autocomplete';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GoogleAutocompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGoogleMapsAutocompleteModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyADFUUVA_yAZsK6tw2Z9mRzkMVxnGvDLo4',
+      libraries: ['places']
+    }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

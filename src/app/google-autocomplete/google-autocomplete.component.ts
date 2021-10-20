@@ -14,13 +14,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class GoogleAutocompleteComponent implements OnInit {
 
   addressFormGroup: FormGroup|any;
-
+  addressFormGroup2: FormGroup|any;
   ngOnInit(): void {
     this.addressFormGroup = new FormGroup({
       address: new FormControl(),
     });
-
-    this.addressFormGroup.get('address').valueChanges.subscribe((value:any) => console.log('value changed', value))
+    this.addressFormGroup2 = new FormGroup({
+      address: new FormControl(),
+    });
+    this.addressFormGroup.get('address').valueChanges.subscribe((value:any) => console.log('value changed', value));
+    this.addressFormGroup2.get('address').valueChanges.subscribe((value:any) => console.log('value changed', value))
   }
 
 }
